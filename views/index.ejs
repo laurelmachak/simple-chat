@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+
+  <title>MY APP</title>
+</head>
+<body>
+
+    <div id="container">
+      <div class="content" id="navbar">
+        <a href="/">New Book</a>
+        <a href="/">About</a>
+        <a href="/">Partners</a>
+      </div>
+      <div class="content" id="page">
+  <ul class="sent">
+  <% for(var i=0; i<sent.length; i++) {%>
+    <li class="message">
+      <span><%= sent[i].name %></span>
+      <span><%= sent[i].message %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <form action="/sent" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="message" name="message">
+    <button type="submit">Submit</button>
+  </form>
+    
+    <div>
+    <h2>replace the value of one of the names with a new value.</h2>
+        <button id="update">new name!</button>
+    </div>
+    
+    <div>
+    <h2>delete first replaced collection</h2>
+        <button id="delete">delete</button>
+    </div>
+    
+        </div>
+    
+<script src="main.js"></script>
+</body>
+</html>
